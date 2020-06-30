@@ -1,0 +1,25 @@
+insertion sorting algorithm
+
+algoriithm;
+
+1. take the first element to be sorted and rest to be unsorted
+2. take the 1st elmt in unsorted list and compare it with soted part
+3.u1<s1 tn, insert u1 in correct index
+4.take nxt elmt in usorted part and compare with sorted elements
+5.repeat untill all elmts are sorted
+
+
+# insertion sort in pyhton
+
+def InsertionSort(my_list):
+    for index in range(1 , len(my_list)):
+        current_element = my_list[index]
+        pos = index
+        while current_element<my_list[pos-1] and pos > 0:
+            my_list[pos] = my_list[pos-1]
+            pos = pos - 1
+        my_list[pos] = current_element
+            
+list1 = [2 , 4 , 3 , 5 , 1]
+InsertionSort(list1)
+print(list1)  
