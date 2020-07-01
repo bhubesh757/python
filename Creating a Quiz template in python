@@ -1,0 +1,61 @@
+q1 = """I want to generate a random secure hex token of 32 bytes to reset the password, which method should I use
+
+ a)secrets.hexToken(32)
+ b)secrets.hex_token(32)
+ c)secrets.tokenHex(32)
+ d)secrets.token_hex(32)"""
+q2 = """To generate a random secure Universally unique ID which method should I use
+
+ a)uuid.uuid4()
+ b)uuid.uuid1()
+ c)uuid.uuid3()
+ d)random.uuid()"""
+q3 = """To generate a random float number between 20.5 to 50.5, which function of a random module I need to use
+
+ a)random.random(20.5, 50.5)
+ b)random.uniform(20.5, 50.5)
+ c)random.randrange(20.5, 50.5)
+ d)random.randfloat(20.5, 50.5)"""
+
+q4 = """Which method should i use to capture and change the current state of the random generator
+
+ 
+a)random.getstate()
+b)random.setstate(state) 
+c)random.currentstate()
+d)random.setcurrentstate(state)"""
+
+q5 = """To Generate a random secure integer number, select all the correct options.
+
+a) random.SystemRandom().randint()
+b)random.System.randint()
+c)secrets.randbelow()
+d) none of the above"""
+
+
+
+questions = {q1 :"a" , q2 : "a" , q3 :"b" , q4 :"c" , q5 : "d"}
+
+name = input("enter your name:")
+print("hey!" , name , "welcome to our community")
+
+score = 0
+for i in questions:
+    print()
+    print(i)
+    flag1 = input("do u want to skip the queston (yes/no)")   # to skip the question
+    if flag1 =="yes":
+        continue
+    ans = input("enter the answer (a/b/c/d):")
+    if ans == questions[i]:
+        print("your answer is correct , you got one point eachfor coorect answer")
+        score = score + 1
+        print("current score is :", score )
+    else:
+        print("your answer is wrong , you lose one point")
+        score = score - 1
+        print("current score is :" , score)
+    flag2 = input("do you want to quit(yes/no):")
+    if flag2 == "yes":
+        break
+print("final acore is:" , score)
