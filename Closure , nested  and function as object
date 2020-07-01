@@ -1,0 +1,58 @@
+# closure
+
+def outer():
+    x = 5
+    def inner():            #closure definition
+        y = 6              #function objext rememebrs the value in                   
+                          #the enclosing scope even if they are present in memory
+        result =  x + y
+        return result
+    return inner
+
+a = outer()
+print(a())        # here it tells the a = outer() but it prints as the inner 
+# here just call the a() function
+
+#useprint(a.__name__) to print inner fn
+# theoutput as 5 + 6 = 11
+
+
+# nested
+
+#nested function 
+
+def outer():
+    y = 89
+    def inner():
+        print(y)
+    inner()
+  
+outer()
+
+# function as object
+
+
+def k():
+    print("hi github")
+    
+k()         #  it prints hi github
+#if we call only the k  it prints   <function __main__.k()>
+
+#and take i = k and call i() as function
+
+def k():
+    print("hi github")
+    
+k()
+hi github
+
+k
+Out[73]: <function __main__.k()>
+
+f = k
+
+k
+Out[75]: <function __main__.k()>
+
+k()
+hi github
