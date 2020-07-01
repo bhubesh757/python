@@ -1,0 +1,23 @@
+# generator in pyhton
+# generator is a function which returns generator- iterator with the help of yield keyword
+
+def fib(mymax):
+    a , b = 0, 1
+    while True:
+        c = a + b
+        if c < mymax:
+            print("before yield keyword")
+            yield c
+            print("after yield keyword")
+            a = b
+            b = c
+        else:
+            break
+# run the program and give in console
+            # generator = fib(10)
+            #genrator(next)        call the generator function with next parameter
+            
+            
+            
+ #example 2
+ 
