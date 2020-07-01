@@ -1,0 +1,43 @@
+# flames in python
+
+# what are the steps to play the flames game in python
+#1) write down the names in a paper
+#2) find the common letters in the word and delete that 
+#3) find the remaining and count
+#4) write flames keyword and count the remining word until it completes
+
+
+#program   
+
+
+name1 = input("Enter the first name: ").lower()
+name2 = input("Enter the second name: ").lower() 
+name1  = name1.replace(" " , "")
+name2 = name2.replace(" " , "")   # to remove the upper and lower case and to remove the whitespace in the name
+
+for i in name1:
+    for j in name2:
+        if i == j:
+            name1 = name1.replace(i , "" , 1)
+            name2 = name2.replace(j, "" , 1) 
+            break
+            
+count = len(name1 + name2)         # concatinate that is adding
+print(count)
+
+if count > 0:
+    list1 = ["Friends" , "lovers" , "affectionate" , "marriage" , "enemies" , "siblings"]
+    while len(list1)>1 :
+        c = count % len(list1)   #4 %6 = 4 to delete thecharacter in strings
+        s_index = c - 1 
+        if s_index>=0:
+             left = list1[:s_index]
+             right = list1[s_index+1:] 
+             list1 = right + left
+             
+        else:
+            list1 = list1[:len(list1)-1]
+    print("relationship is:" , list1[0])
+else:
+    print("enter different names")
+             
