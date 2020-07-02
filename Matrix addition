@@ -1,0 +1,32 @@
+# matrix addition and subtraction
+
+row = int(input("enter the rows nummbers:"))
+col = int(input("enter the column numbers :" ))
+
+print("enter the elments for matix11:")
+matrix1 = [[int(input())for i in range (col)] for j in range(row)] # list comprehension
+print("matrix1:")
+for i in range(row):
+    for j in range(col):
+        print(format(matrix1[i][j] ,"<3"),end = " ")  # 
+        print()          # this to print in new line
+
+print("enter the elments for matix12:")
+matrix2 = [[int(input())for i in range (col)] for j in range(row)] # list comprehension
+print("matrix2:")
+for i in range(row):
+    for j in range(col):
+        print(format(matrix2[i][j] , "<3"),end = " ")  # 
+        print()          # this to print in new line
+    
+result = [[0 for i in range (col)] for j in range(row)]    
+for i in range(row):
+    for j in range(col):
+        result[i][j] = matrix1[i][j] +  matrix2[i][j]
+for i in range (row):
+    for j in range(col):
+        print(format(matrix2[i][j] , "<3") , end ="")
+    print()
+        
+        
+        
