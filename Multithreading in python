@@ -1,0 +1,25 @@
+# multithreading in python
+
+from time import sleep
+from threading import Thread
+
+class hello(Thread):
+    def run(self):
+         for i in range(50):
+            print("hello bhubesh")
+            sleep(1)
+
+class hi(Thread):
+    def run(self):
+        for i in range(50):
+            print("hi bhubesh, i am python")
+            sleep(1)
+        
+        
+obj1 = hello()
+obj2 = hi()
+
+obj1.start()
+obj2.start()
+
+        
