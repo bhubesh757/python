@@ -1,0 +1,32 @@
+ #matrix multiplication
+
+p = int(input("enter the rows numbers for matrix1:"))
+q = int(input("enter the column numbers for matrix2 :" ))
+n = int(input("enter the column numbers for matrix1 / row numbers for matrix2:"))
+
+print("enter the elments for matix1:")
+matrix1 = [[int(input())for i in range (n)] for j in range(p)] # list comprehension
+print("matrix1:")
+for i in range(p):
+    for j in range(n):
+        print(format(matrix1[i][j] ,"<3"),end = "")  # 
+        print()          # this to print in new line
+
+print("enter the elments for matrix2:")
+matrix2 = [[int(input())for i in range (q)] for j in range(n)] # list comprehension
+print("matrix2:")
+for i in range(n):
+    for j in range(q):
+        print(format(matrix2[i][j] , "<5"),end = " ")  # 
+        print()          # this to print in new line
+    
+result = [[0 for i in range (q)] for j in range(p)]    
+for i in range(p):
+    for j in range(q):
+        for k in range(n):
+            result[i][j] = result[i][j] + matrix1[i][k] * matrix2[k][j]
+print("result is")
+for i in range (p):
+    for j in range(q):
+        print(format(matrix2[i][j] , "<5") , end ="")
+    print()
