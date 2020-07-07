@@ -1,0 +1,64 @@
+def upper_d(func):
+    def inner():
+        str1 = func()
+        return str1.upper()  # code<> is in upper case , changing the string to the uppercase
+    return inner
+
+def split_d(func):
+    def wrapper():
+        str2 = func()
+        return str2.split() # code<> is splitted
+    return wrapper
+
+@split_d
+@upper_d
+
+def ordinary():
+    return "bad morning"  # split the string
+
+print(ordinary())
+
+
+# example 2
+
+# decarator is a parameter
+
+def outer(expr):
+    def upper_d(func):
+        def inner():
+            return func() + expr
+        return inner
+    return upper_d
+
+@outer("bhubesh")
+def ordinary():
+    return "bad morning ,  for me too"
+
+print(ordinary()) 
+
+
+
+
+# general decarator function
+
+
+def div_decarator(func):
+    def inner(*args):  # we can use multiple aarguements
+        list1 = []
+        list1 = args[1:]
+        for i in list1:
+            if i == 0:
+                return "give proper input"
+            return func(*args)
+        return inner
+    
+@div_decarator
+def div1 (a,b):
+    return a/b
+
+@div_decarator
+def div2(a,b,c):
+    return a/b/c
+
+print(div1(10,5))
+print(div2(0,9,10))  #its shows the zero division error
