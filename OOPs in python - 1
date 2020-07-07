@@ -1,0 +1,31 @@
+# object oriented programming 
+
+# object // collection of data and its functionality
+#class // to create more objects // template to create the object
+
+class person:
+    pass
+
+p = person() # as here p is the object
+print(p)  # we are printing the object
+
+
+# methods
+class person:
+    def display(self):
+        print("hello")
+p1= person()
+p1.display()  #object .parameter
+
+# init method
+
+class person:
+    def __init__(self, name):   # varies the insatnce and local variable 
+        self.name = name
+    def display(self):
+        print("hello" , self.name)
+p1 = person("bhuji")
+p1.display()
+
+#or use this to get same o/p by callling the function
+person("bhuji").display()
