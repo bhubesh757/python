@@ -1,0 +1,87 @@
+# decorators
+
+# 1) nested fn
+#2)fn can return another fun
+#3) fn names are reference
+#4) fn as parameter of another fn
+
+# 1) example
+def outer():
+    x = 3        # local variable
+    def inner():
+        y = 3
+        result = x + y
+        return result
+    return inner
+a = outer()
+print(a())
+
+#2) 
+def outer():
+    x = 3        # local variable
+    def inner():
+        y = 3
+        result = x + y
+        return result
+    return inner()
+a = outer()
+print(a)
+
+# 3)
+def outer():
+    x = 3        # local variable
+    def inner():
+        y = 3
+        result = x + y
+        return result
+    return inner
+a = outer()
+print(a.__name__)
+
+
+#4)
+def function1():
+    print("hi i am function1")
+def function2(func):
+    print("hi  i  am function 2 now i will call fn")
+    func()
+    
+function2(function1)    #fn as parameter of another fn
+
+
+
+
+
+# main example
+def  str_upper(func):
+    def inner():
+        str1 = func()
+        return str1.upper()
+    return inner 
+
+def print_str():
+    return "hlo good morning"
+
+print(print_str())           # decorate the code<>
+
+d = str_upper(print_str)     # == @str_upper use above the def print_str
+print(d())                                 # after decorating the code<>
+
+
+
+# if it has any parameters 
+def div_decarator(fn):
+    def inner(x,y):
+        if y == 0:
+            return"give the proper input"
+        return fn(x,y)
+    return inner
+@div_decarator
+def div(a,b):
+    return a/b
+print(div(4,0))         # zero division error
+
+
+
+
+
